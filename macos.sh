@@ -28,9 +28,6 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
-# Allow quitting of Finder
-defaults write com.apple.finder QuitMenuItem -bool true;
-
 
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
@@ -48,6 +45,34 @@ defaults write com.apple.systemuiserver menuExtras -array \
 "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
 "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
 "/System/Library/CoreServices/Menu Extras/Volume.menu"
+
+
+###############################################################################
+# Finder                                                                      #
+###############################################################################
+
+# Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
+defaults write com.apple.finder QuitMenuItem -bool true
+
+# Finder: show hidden files by default
+defaults write com.apple.finder AppleShowAllFiles -bool true
+
+# Finder: show all filename extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# Finder: show path bar
+defaults write com.apple.finder ShowPathbar -bool true
+
+# Keep folders on top when sorting by name
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+
+# Avoid creating .DS_Store files on network or USB volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+# Use list view in all Finder windows by default
+# Four-letter codes for the other view modes: `icnv`, `Nlsv`, `glyv`
+defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 
 
 ###############################################################################
