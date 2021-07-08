@@ -35,12 +35,14 @@ brew install --cask google-chrome
 brew install --cask visual-studio-code
 brew install --cask iterm2
 brew install --cask notion
+brew install --cask spotify
 brew install --cask rectangle
 brew install --cask itsycal
 
 # Other things useful for work
 #brew install picocom
 #brew install --cask slack
+#brew install --cask docker
 
 # Remove outdated versions from the cellar.
 brew cleanup
