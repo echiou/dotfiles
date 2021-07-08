@@ -18,6 +18,16 @@ brew upgrade
 
 # Install other useful binaries
 brew install git
+# Let's properly set up python while we're here
+if test ! $(which pyenv); then
+    brew install pyenv
+    # Assume we used this script to install pyenv just now
+    echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
+    echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+fi
+LATEST_PYTHON_VER=3.9.6 # Latest as of 2020/07/07
+pyenv install -s $LATEST_PYTHON_VER
+pyenv global $LATEST_PYTHON_VER
 
 # Install useful apps
 brew install --cask firefox
