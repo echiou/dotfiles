@@ -41,8 +41,9 @@ brew install --cask itsycal
 
 # Other things useful for work
 #brew install picocom
-#brew install --cask slack
+#brew install --cask 1password
 #brew install --cask docker
+#brew install --cask slack
 
 # Remove outdated versions from the cellar.
 brew cleanup
