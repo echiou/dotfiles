@@ -25,7 +25,12 @@ if test ! $(which pyenv); then
     echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
     echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 fi
-LATEST_PYTHON_VER=3.9.6 # Latest as of 2020/07/07
+if test ! $(pyenv virtualenv --version); then
+    brew install pyenv-virtualenv
+    # Assume we used this script to install pyenv-virtualenv just now
+    echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
+fi
+LATEST_PYTHON_VER=3.9.6 # Latest as of 2021/07/07
 pyenv install -s $LATEST_PYTHON_VER
 pyenv global $LATEST_PYTHON_VER
 
