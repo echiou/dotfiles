@@ -18,6 +18,11 @@ brew upgrade
 
 # Install other useful binaries
 brew install git
+if test ! $(which autojump); then
+    brew install autojump
+    # Assume we used this script to install autojump just now
+    echo '[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh' >> ~/.zshrc
+fi
 # Let's properly set up python while we're here
 if test ! $(which pyenv); then
     brew install pyenv
